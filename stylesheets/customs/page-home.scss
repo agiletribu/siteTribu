@@ -1,0 +1,194 @@
+
+/* *********************** */
+/*      MAIN HEADER       */
+/* ********************* */
+
+.home-body { background: #65b650}
+
+/* #home-hd */
+#home-hd { position: relative; z-index: 1; background: #56a2ba url(../img/home-bg-heading.jpg) no-repeat center bottom; background-size:contain; height: 790px;}
+#home-hd .inside { background: url(../img/home-cloud.png) no-repeat top center; min-height: 280px; padding-bottom: 40px    }
+#home-hd h1{ width: 238px; height:97px; background: url(../img/agile-tribu.png) no-repeat 0 0; position: absolute; top: 60px; left: 0; right: 0; margin: 0 auto; z-index: 5} 
+#home-hd h1 span { display: none;}
+.perso-calumet { background: url(../img/calumet.png) no-repeat 0 0; position: absolute; bottom: 40px; left: 0; right:0; margin:0 auto; z-index: 9; width: 216px; height: 318px;} 
+
+
+.home-menu { position: relative; min-height: 366px; width: 100%;   z-index: 9; padding-top: 107px  ;}
+.hm-1 { float: left; display: block; background: url(../img/cloud-left.svg) no-repeat 0 0; width: 308px; text-align: center; height: 145px; padding: 65px 0 0 0; font-size: 16px; color: #ee3948;}
+.hm-1 strong { font-size: 22px}
+.hm-2 { color: #4598ab; position: absolute; padding: 76px 0 0 0; font-size: 16px; bottom: 0; left:0; right:0; margin: 0 auto; display: block; background: url(../img/cloud-bottom.svg) no-repeat 0 0; width: 360px; text-align: center; height: 158px;}
+.hm-2 strong { font-size: 22px}
+.hm-3  { padding: 70px 0 0 0; float: right; color: #67b93c; font-size: 16px; display: block; background: url(../img/cloud-right.svg) no-repeat 0 0; width: 324px; text-align: center; height: 134px;}
+.hm-3 strong { font-size: 22px}
+			
+.hm-1:hover { @extend .animated,  .rubberBand;color: #ee39d7; text-decoration: none;}
+.hm-2:hover { @extend .animated,  .rubberBand;color: #7745ab; text-decoration: none;}
+.hm-3:hover { @extend .animated,  .rubberBand;color: #3c71b9; text-decoration: none;}
+
+
+/* home-bd */
+#home-bd { margin-top:-92px;} 
+#home-bd header { padding: 133px 0 60px 0; position: relative; z-index: 2; background:  url(../img/grass-back.png) repeat-x 0 0; min-height: 300px;}
+#home-bd .pancarte { margin: 0 auto; padding: 34px 0 0 0; width: 100%;	min-height: 149px; background: url(../img/pencarte.jpg) no-repeat center 0; text-align: center;}
+#home-bd .pancarte h2 { margin: 0 0 15px 0; padding: 0; text-align: center; color: #fffeff; 	font-size: 17px;	font-weight: 400;	line-height: 1.2em;}
+#home-bd .pancarte h3 {margin: 0; padding:0; text-align: center; font-family: $BubblegumSans;	color: #ffffff; line-height: 1em;	font-size: 48px;	font-weight: 400;}
+#home-bd .herbe { position: absolute; bottom: 0; width: 100%; height: 104px; background: url(../img/grass-front-pencarte.png) repeat-x 0 0}
+
+/* ARTICLE */
+#home-bd article { background-color: #478137; padding-top: 70px;}
+#home-bd article .col1,
+#home-bd article .col2,
+#home-bd article .col3 {position: relative; z-index: 1; min-height: 429px;    }
+#home-bd article .col1 h2,
+#home-bd article .col2 h2,
+#home-bd article .col3 h2 { position: absolute; top: 0; left: 0; width: 100%; text-align: center;	color: #ffffff; text-transform: uppercase; margin: 0;	padding:300px 20px 0  10px;font-size: 21px; font-weight: 400;}
+.home-vocation{ text-align: center; text-transform: uppercase;font-size: 38px; color: #fff; padding: 130px 0 110px 0; font-family: $BubblegumSans;} 
+
+/* Footer */
+#home-ft { clear: both; float: none; background-color: #fff;}
+#home-ft .hd { text-align: center; background-color: #ab7a59; color: #fff; padding: 17px 0; }
+#home-ft .hd .ft-title { display: inline-block; text-align: left; background: url(../img/tasse.jpg) no-repeat 0 0; padding: 7px 0 10px 75px;}
+#home-ft .hd .ft-title h2 { font-size: 20px; margin: 0; padding: 0; line-height: 1em; font-weight: 700; color: #fff;   text-shadow: 0px 1px 0px rgba(73, 45, 105, 0.63);} 
+#home-ft .hd .ft-title h2 a { color: #fff;}
+#home-ft .hd .ft-title p { background: url(../img/meetup-logo.jpg) no-repeat right 0; margin: 0; font-size: 20px; color: #fff; padding:0 97px 0 0; }
+
+#home-ft .hd .ft-title:hover { cursor: pointer; @extend .animated,  .tada;}
+#home-ft .hd .ft-title:hover h2 a { text-decoration: none;}
+#home-ft .hd .ft-title:hover {  background: url(../img/tasse.jpg) no-repeat 0 -130px;  }
+#home-ft .hd .ft-title:hover p  { background: url(../img/meetup-logo.jpg) no-repeat right -217px;  }
+#home-ft .bd { padding-top: 30px;}
+#home-ft .bd h2 { font-size: 30px; color: #2b533a; font-family:$opensans; margin: 0 0 30px 0; padding: 0; font-weight: 700; }
+#home-ft .bd p { font-size: 15px; color: #2b533a;}
+#home-ft .bd a { color:#2b533a; }
+#home-ft .bd a.linking { background-color: #46875e; line-height: 1em; color: #fff; display: inline-block; border-radius: 10px; padding: 4px 10px 6px 10px;}
+#home-ft .bd a.linking .fa { margin-right: 4px;}
+#home-ft .bd a.linking:hover { background-color: #ab7a59; color: #fff; text-decoration:none;}
+#home-ft .bd .block-adress { padding: 0 0 0 40px; background: url(../img/map.png) no-repeat 0 0}
+#home-ft .bd .block-adress p { font-size: 17px;}
+#home-ft .bd .block-adress a.linking {  font-size: 11px;}
+
+.p-tel { background: url(../img/phone.png) no-repeat 0 0; padding: 0 0 5px 36px;}
+.p-mail { background: url(../img/mail.png) no-repeat 0 0; padding:0 0 5px 36px;}
+
+.block-adhesion { background: url(../img/check-hand.png) no-repeat 0 0; margin-left: 2%; padding: 0 0 0 55px;}
+.block-adhesion a.linking {  font-size: 14px;padding: 10px 25px; border-radius: 15px;}
+
+
+ // DESKTOP   
+@media only screen and (min-width:992px) and (max-width:1200px) {
+
+.perso-calumet { background: url(../img/calumet-desktop.png) no-repeat 0 0; width:173px; height: 254px;  }
+	
+#home-bd article .col1 h2, 
+#home-bd article .col2 h2, 
+#home-bd article .col3 h2 { padding: 250px 20px 0 10px; font-size: 17px; }
+	
+.home-vocation { padding: 50px 0 80px 0;}
+	
+}
+ 
+
+// IPAD VERTICAL         
+@media only screen and (min-width:768px) and (max-width:991px) {
+ 
+#home-hd h1 {  background: rgba(0, 0, 0, 0) url("../img/agile-tribu.png") no-repeat scroll 0 0;  height: 97px;  width: 238px;  top: 30px; }
+.perso-calumet { background: url(../img/calumet-desktop.png) no-repeat 0 0; width:173px; height: 254px;  }
+	
+#home-bd article .col1 h2, 
+#home-bd article .col2 h2, 
+#home-bd article .col3 h2 { padding: 200px 20px 0 10px; font-size: 14px; }
+	
+.home-vocation { padding: 0 0 40px 0; font-size: 28px}
+
+#home-bd article .col1, #home-bd article .col2, #home-bd article .col3 {  min-height: 329px;  position: relative; z-index: 1;}
+	
+	
+}
+
+
+
+// SMARTPHONE VERTICAL 
+@media only screen and (min-width:20px) and (max-width:767px) {
+ 
+	
+/* MENU */
+ 
+	
+	.hm-1,
+	.hm-2,
+	.hm-3 {float: none; position: inherit;border: 4px solid #eeeeee ;  border-radius: 5px; display: block; margin: 0 0 10px 0; background:#fff;  width: 100%; text-align: center; height: auto; padding:  0; font-size: 16px;  }
+	
+	
+ 
+	.hm-1 span,
+	.hm-2 span,
+	.hm-3 span { margin: 4px; border: 1px dashed #6d6d6d; min-height: 60px; padding: 5px; display: block;}
+	.hm-3 span { padding-top: 15px;}
+	
+	
+	/* heading */
+	
+	#home-hd {
+  background: #56a2ba url(../img/home-bg-heading-smartphone.jpg) no-repeat  center bottom  ; background-size: 100%;
+  height: 653px;
+ 
+}
+	
+	
+	
+/* content */
+	
+#home-hd h1 {  background:   url("../img/agile-tribu-smartphone.png") no-repeat   center 0;  height: 97px;  width: 238px; padding: 20px 0  ; position: inherit;}
+
+.perso-calumet { background: url(../img/calumet-desktop.png) no-repeat 0 0; width:173px; height: 254px;  }
+#home-bd article .col1, 
+#home-bd article .col2, 
+#home-bd article .col3 { margin-bottom: 30px }
+	
+#home-bd article .col1 .inside, 
+#home-bd article .col2 .inside, 
+#home-bd article .col3 .inside {   margin-left: 10px;}
+	
+
+#home-bd article .col1 h2, 
+#home-bd article .col2 h2, 
+#home-bd article .col3 h2 { padding: 260px 20px 0 10px; font-size: 16px; }
+	
+.home-vocation { padding: 0 0 40px 0; font-size: 20px}
+
+#home-bd article .col1, #home-bd article .col2, #home-bd article .col3 {  min-height: 329px;  position: relative; z-index: 1;}
+	
+
+	.home-menu {
+  min-height: 100px;
+  padding-top: 5px;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+	
+
+#home-bd .pancarte {
+  background:  url(../img/pencarte-smartphone.png) repeat  center 0;
+  min-height: 149px;
+  margin: 0 auto;
+  padding: 34px 0 40px 0 ;
+  text-align: center;
+  width: 100%;
+}
+	
+	
+	
+	#home-bd .pancarte h3 { font-size: 38px;    margin:  0; }
+	#home-ft .hd .ft-title h2 {   margin: 0 0 10px 0; }
+	#home-ft .hd .ft-title p {  background:   url(../img/meetup-logo.jpg) no-repeat   right 15px; font-size: 17px; }
+	#home-ft .hd .ft-title:hover p  { background: url(../img/meetup-logo.jpg) no-repeat right -202px;  }
+	#home-ft .bd h2 {    margin: 0 0 10px 0; }	
+	.col-adhesion { padding-top: 30px;}
+	
+	
+	
+	
+ }
+		
+

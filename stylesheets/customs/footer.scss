@@ -1,0 +1,55 @@
+
+/* Footer */
+
+#ft { position: relative; clear: both; float: none; background-color: #fff; padding-bottom: 60px;}
+
+#ft .hd { text-align: center; background-color: #ab7a59; color: #fff; padding: 17px 0; }
+#ft .hd .ft-title { display: inline-block; text-align: left; background: url(../img/tasse.jpg) no-repeat 0 0; padding: 7px 0 10px 75px;}
+#ft .hd .ft-title h2 { font-size: 20px; margin: 0; padding: 0; line-height: 1em; font-weight: 700; color: #fff;   text-shadow: 0px 1px 0px rgba(73, 45, 105, 0.63);} 
+#ft .hd .ft-title h2 a { color: #fff;}
+#ft .hd .ft-title p { background: url(../img/meetup-logo.jpg) no-repeat right 0; margin: 0; font-size: 20px; color: #fff; padding:0 97px 0 0; }
+ 
+
+#ft .vocation { background-color: #478137;  padding: 70px 0 80px 0;}
+#ft .vocation h2 { font-size: 35px; color: #def2d8;  font-family: $BubblegumSans; padding: 0; margin: 0 0 10px 0;}
+ 
+#ft .bd { padding-top: 30px;}
+#ft .bd h2 { font-size: 30px; color: #2b533a; font-family:$opensans; margin: 0 0 30px 0; padding: 0; font-weight: 700; }
+#ft .bd p { font-size: 15px; color: #2b533a;}
+#ft .bd a { color:#2b533a; }
+#ft .bd a.linking { background-color: #46875e; line-height: 1em; color: #fff; display: inline-block; border-radius: 10px; padding: 4px 10px 6px 10px;}
+#ft .bd a.linking .fa { margin-right: 4px;}
+#ft .bd a.linking:hover { background-color: #ab7a59; color: #fff; text-decoration:none;}
+#ft .bd .block-adress { padding: 0 0 0 40px; background: url(../img/map.png) no-repeat 0 0}
+#ft .bd .block-adress p { font-size: 17px;}
+#ft .bd .block-adress a.linking {  font-size: 11px;}
+#ft .hd .ft-title:hover { cursor: pointer; @extend .animated,  .tada;}
+#ft .hd .ft-title:hover h2 a { text-decoration: none;}
+#ft .hd .ft-title:hover {  background: url(../img/tasse.jpg) no-repeat 0 -130px;  }
+#ft .hd .ft-title:hover p  { background: url(../img/meetup-logo.jpg) no-repeat right -217px;  }
+	
+.p-tel { background: url(../img/phone.png) no-repeat 0 0; padding: 0 0 5px 36px;}
+.p-mail { background: url(../img/mail.png) no-repeat 0 0; padding:0 0 5px 36px;}
+
+.block-adhesion { background: url(../img/check-hand.png) no-repeat 0 0; margin-left: 2%; padding: 0 0 0 55px;}
+.block-adhesion a.linking {  font-size: 14px;padding: 10px 25px; border-radius: 15px;}
+
+
+
+// SMARTPHONE VERTICAL 
+@media only screen and (min-width:20px) and (max-width:767px) {
+	
+#ft .hd .ft-title h2 { margin: 0 0 10px 0;
+}
+#ft .hd .ft-title p { background:   url("../img/meetup-logo.jpg") no-repeat   right 15px; font-size: 17px; }
+#ft .hd .ft-title:hover p  { background: url(../img/meetup-logo.jpg) no-repeat right -202px;  }
+#ft .bd h2 {margin: 0 0 10px 0;  }
+	
+.col-adhesion { padding-top: 30px;}
+#ft .hd .ft-title p { font-size: 16px;}
+	
+ }
+		
+
+
+

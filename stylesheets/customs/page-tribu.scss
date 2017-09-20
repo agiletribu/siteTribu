@@ -1,0 +1,131 @@
+ 
+/* section-trombinoscope */
+.section-trombinoscope { background-color: #65b650; padding-top: 60px;}
+
+
+/* block-trombo */
+.block-trombo { text-align: center; display: inline-block; margin: 0 2% 50px 2%;}
+.block-trombo img { border: 6px solid #fff; border-radius: 50%; }
+.block-trombo:hover img { @extend .animated,  .tada; border-color:#3e7031}
+ .block-trombo strong {padding: 4px 0 0 0; margin: 0 0 15px 0; display: block;	color: #31472a; font-size: 17px; font-weight: 700;}
+.block-trombo:hover strong {   color:#fff}
+.block-trombo a.link-social { display: inline-block; padding: 5px; line-height: 1em; color: #fff; background-color: #59a6b7; font-size: 17px; }
+.block-trombo a.link-social .fa { margin: 0; padding: 0;}
+.block-trombo a.link-social:hover { background-color: #0096b7; text-decoration: none;}
+
+/* p-bientotvous */
+.grass-back { background: url(../img/grass-back.png)  repeat 0 0; padding: 75px 0 0 0;}
+.grass-front { background: url(../img/grass-front.png) repeat 0 0; padding: 100px 0 30px 0;}
+
+
+/* .p-bientotvous */
+.section-bientotvous { background-color: #65b650;}
+.bientotvous { min-height: 125px; text-align: left; color: #fff;  display: inline-block;font-family: $caveat; font-size: 33px; background: url(../img/trombi.jpg) no-repeat 0 0; padding: 20px 0 0 230px;}
+.bientotvous strong{ font-size: 35px;}
+
+
+/* section valeur */
+.section-valeur { background-image:  linear-gradient(  160deg, rgb(43,175,237) 40%, rgb(0,111,163) 100%); color: #fff;}
+.section-valeur a { color: #fff;}
+.section-valeur .inside { padding: 195px 0 0 0;background: url(../img/berge.jpg) repeat-x 0 0;}
+.section-valeur h2 { text-align: center; font-size: 48px; color: #fff; margin: 0 0 90px 0; font-family: $opensans;}
+.section-valeur h3 { text-align: center; padding: 0; margin: 0 0 18px 0; font-size: 27px;   color: #fff; font-weight:700;  }
+.section-valeur p { font-size: 15px; color: #fff;}
+
+.block-text { padding: 0 3%; margin: 0 0 100px 0;}
+
+
+/* section-affiliation */
+.section-affiliation { background-color: #fff; padding: 52px 0;}
+.section-affiliation h2 { margin: 0 0 45px 0; font-family: $opensans; color: #1d87a9; font-size: 32px; text-align: center;}
+
+
+/* section-local */
+.section-local { padding: 52px  0; background: #ab7a59 url(../img/texture.png) repeat 0 0;}
+.section-local h2 { color: #f7d4bd; font-size: 53px; font-family: $opensans; text-align: center; margin: 0 0 50px 0; padding: 0;}
+.section-local h3 { text-align: center; color: #f7ebe2; font-size: 32px; font-family: $caveat; margin: 0 0 56px 0; padding: 0;}
+.section-local p { font-size: 19px; color: #f7eae2;}
+.section-local figure { position: relative;   width:70%; margin: 0 auto;}
+.section-local figure .p-local {text-align: center; position: relative; display: block;}
+
+.section-local figure .p-local::before { display: block; background: url(../img/scotch1.png) no-repeat 0 0; width: 99px; height: 99px; content: ""; position: absolute; top: -30px; left: -5px; z-index: 5;}
+.section-local figure .p-local::after { display: block; background: url(../img/scotch2.png) no-repeat 0 0; width: 99px; height: 99px; content: ""; position: absolute; bottom: -20px; right: -10px; z-index: 5;}
+
+.section-local figure figcaption { padding: 20px;}
+
+/* section-contact */
+
+.section-contact { font-size: 15px ; color: #102a27;background-color: #fafafa; padding: 73px 0;}
+.section-contact h2 { font-family: $opensans; text-align: center; color: #4d8954; font-size: 40px; padding: 0; margin:  0 0 10px 0;}
+.section-contact h3 { color: #868282; text-align: center; font-size: 23px; padding: 0; margin:  0 0 75px 0;}
+
+.block-googlemap { border: 7px solid #4d8954; margin: 0 0 30px 0;  width: 100%; margin: 0 auto 30px auto;}
+.block-googlemap .inside { position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0;}
+.block-googlemap .inside iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+
+.section-contact p {font-size: 15px ; color: #102a27;}
+.section-contact a { color: #102a27;}
+.section-contact .p-agileadresse { margin: 0 0 33px 0; text-align: center; font-size: 21px; color: #1e3717; padding: 70px 0 0 0; }
+.section-contact .span-mail { padding: 0 0 5px 35px; background: url(../img/mail.png) no-repeat 0 2px; display: block; float:left; font-size: 15px ; color: #102a27;}
+.section-contact .span-tel { padding: 0 0 5px 35px; background: url(../img/phone.png) no-repeat 0 0; display: block; float: right;font-size: 15px ; color: #102a27;}
+
+.row-formcontact { padding-top: 50px;}
+
+
+			  
+// LARGE                 
+@media only screen and (min-width:1201px)   {
+.block-trombo { margin: 0 4% 50px; }
+
+}
+
+
+// DESKTOP   
+@media only screen and (min-width:992px) and (max-width:1200px) {
+.block-trombo { margin: 0 2% 50px; }
+
+}
+
+
+// IPAD VERTICAL         
+@media only screen and (min-width:768px) and (max-width:991px) {
+.block-trombo { margin: 0 1% 50px; }
+.section-local figure .p-local::before {   top: -30px; left: -20px; z-index: 5;}
+.section-local figure .p-local::after {  bottom: -20px; right: -20px; z-index: 5;}
+.section-contact .p-agileadresse { margin-left: 30px;   padding:  0;text-align: left!important; }
+	
+.p-mails { margin-left: 30px}
+.section-contact .span-mail,
+.section-contact .span-tel { width: 100%; clear: both; float: none; text-align: left!important; display: block; margin-bottom: 10px;    }
+	
+}
+
+
+// SMARTPHONE VERTICAL 
+@media only screen and (min-width:20px) and (max-width:767px) {
+ .block-trombo { margin: 0 auto 20px auto; width:100%; }
+ 
+.bientotvous {  background: rgba(0, 0, 0, 0) url("../img/trombi-smartphone.jpg") no-repeat center 0;   font-size: 28px;  min-height: 125px;  padding: 100px 0 0 0;  text-align: center;}
+.section-valeur .inside {padding: 125px 0 0 0;}
+.section-valeur h2 { font-size: 47px;  margin: 0 0 40px 0; }
+.section-valeur h3 {text-align: left;    font-size: 27px;  margin: 0 0 5px 0;   }
+.block-text {  margin: 0 0 60px 0!important; }
+.section-local figure {   width: 100%;}	 
+.section-local figure .p-local::before,
+.section-local figure .p-local::after { display: none;}
+
+.section-contact {   font-size: 15px;  padding: 33px 0;}
+.section-contact h3 {    margin: 0 0 35px 0; }		
+.section-contact .span-mail,
+.section-contact .span-tel { width: 100%; clear: both; float: none; text-align: left!important; display: block; margin-bottom: 10px}
+	
+.section-contact .p-agileadresse {   padding:  0; }
+	
+.block-text p:first-of-type { text-align: center;}
+	
+ }
+		
+
+
+
+

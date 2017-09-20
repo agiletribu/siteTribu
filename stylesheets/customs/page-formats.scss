@@ -1,0 +1,143 @@
+
+/* HEADER */
+#hd-formation  { text-align: center; background: #c0ecf7 url(../img/formation-section-1-100.jpg) no-repeat center bottom; background-size: cover; padding:5px 0  0 0;
+	margin: 0; min-height: 600px; }
+#hd-formation  h1 { font-family: $BubblegumSans; margin:0;padding: 3% 0 0 0; font-size: 75px; color: #50828d; }
+#hd-formation  h1.tiny-title { font-size: 60px;}
+#hd-formation  h2 { font-size: 21px; color: #4e6b72;}
+
+
+/* bd-formation */
+#bd-formation { position: relative; z-index: 1; margin-top: -30px; height: 2350px; background-color: #4e833f; padding-bottom: 104px; background: url(../img/bd-formation.jpg) repeat-x 0 bototm;}
+
+
+/* toutes les sections */
+.section-formation a { font-size: 30px; color: #fff; font-weight: 700; display: block; padding-top: 150px;}
+.section-formation a .fa { margin-right: 4px;}
+.section-formation a:hover { text-decoration: none; color: #a3e4f3;  @extend .animated,  .bounce;}
+
+/* Sections 1 */
+.section-1-ateliers { background:  url(../img/section-1-formation.png)  repeat-x center bottom; position: absolute; top: -170px; left: 0; width:100%; z-index: 2; height: 450px;}
+
+/* Sections 2 */
+
+
+.section-2-seminaires { background: #529641 url(../img/section-2-formation.png) repeat-x 0 bottom; position: absolute; top: 260px; left: 0; width:100%; z-index: 3; height: 380px;}
+.section-2-seminaires a {  padding-top: 100px;}
+
+/* Sections 3 */
+.section-3-innovations { background:  url(../img/section-3-innovations.png) repeat-x 0 0;   position: absolute; top: 590px; left: 0; width:100%; z-index: 4; height: 1000px; padding-top: 70px;}
+
+/* Sections 4 */
+
+.section-4-transformation { background: url(../img/section-4-transformation.png)repeat-x 0 0;  position: absolute; top: 1030px; left: 0; width:100%; z-index: 5; height: 550px;}
+
+
+			  
+// LARGE                 
+@media only screen and (min-width:1201px)   {
+.section-4-transformation .row { position: relative;}
+.section-4-transformation .row a { display: block;position: absolute; top: 40px; text-align: right; left: 0; width: 100%;}
+	
+}
+	
+// DESKTOP   
+@media only screen and (min-width:992px) and (max-width:1200px) {
+.section-4-transformation .row { position: relative;}
+.section-4-transformation .row a { display: block;position: absolute; top: 40px; text-align: right; left: 0; width: 100%;}
+ 	
+}
+
+
+// IPAD VERTICAL         
+@media only screen and (min-width:768px) and (max-width:991px) {
+ .section-4-transformation .row { position: relative;}
+.section-4-transformation .row a { display: block;position: absolute; top: 40px; text-align: right; left: 0; width: 100%;}
+
+}
+
+ 
+
+/* Sections 5 */
+.section-5-lancement { background:   url(../img/section-5-lancement.png) repeat-x 0 0;  position: absolute; top: 1450px; left: 0; width:100%; z-index: 6; height: 750px;}
+.section-5-lancement .row { position: relative;}
+.section-5-lancement .row a { display: block;position: absolute; top: 40px; left: 0; width: 100%;}
+
+/* Sections 6 */
+.section-6-accompagnement { background:   url(../img/section-6-accompagnement.png) repeat-x 0 0;  position: absolute; top: 1870px; left: 0; width:100%; z-index: 7; height: 490px; padding: 100px 0 0 0;}
+
+
+/* footer */
+
+.footer-formation { position: relative; z-index: 1; clear: both; float: none;height: 104px; background: url(../img/bd-formation.jpg) repeat-x 0 bottom;}
+
+
+// IPAD VERTICAL         
+@media only screen and (min-width:768px) and (max-width:991px) {
+ 
+.section-formation a { padding-top: 120px; font-size: 26px}
+	#bd-formation {height: 2180px; padding-bottom: 0; }	
+.section-1-ateliers {    height: 400px; }
+.section-2-seminaires {    top: 220px; }
+.section-4-transformation { height: 550px;  }
+.section-4-transformation  .totem { display: none; }
+.section-4-transformation .row a { text-align: center;}
+.section-6-accompagnement {   top: 1770px; height: 430px; }
+.section-6-accompagnement.section-formation a { padding-top: 80px;}
+	
+	
+}
+
+
+
+// SMARTPHONE VERTICAL  intermederdaire 1       
+@media only screen and (min-width:360px) and (max-width:767px) {
+ 
+ 
+#bd-formation {    height: 2800px;  padding-bottom: 0; text-align: center!important  }
+#hd-formation h1.tiny-title {  font-size: 40px;}	
+#hd-formation {   min-height: 410px; }	
+
+.section-formation a { text-align: center!important;   font-size: 19px;   padding-top: 20px; padding-bottom: 30px;  }	
+.section-1-ateliers {   height: 440px; }	
+ 
+.section-2-seminaires {   height: 380px;   top: 230px; }
+.section-2-seminaires a { padding-top:10px; }
+.section-3-innovations {   height: 520px;   padding-top: 70px;   top: 570px; }
+ 
+.section-4-transformation {   height: 650px;   padding: 140px 0 0;   top: 1020px; }
+.section-4-transformation .totem { display: none;}
+.section-4-transformation .row a { padding-top: 0 0 70px 0;  display: block;   position: inherit;  text-align: center;   width: 100%;}
+.section-5-lancement { background-color: #579446; padding: 150px 0 0 0;   height: 750px;   top: 1600px; }
+.section-5-lancement .row a { display: block; padding: 0 0 80px 0;   position: inherit; }
+.section-6-accompagnement {   top: 2200px; height: 600px; }
+.section-6-accompagnement.section-formation a { padding-top: 80px;}
+
+	
+}
+
+ 
+
+// SMARTPHONE VERTICAL 
+@media only screen and (min-width:20px) and (max-width:359px) {
+ 
+#bd-formation {    height: 2350px;  padding-bottom: 0;  }
+#hd-formation h1.tiny-title {  font-size: 40px;}	
+#hd-formation {   min-height: 410px; }	
+
+.section-formation a { text-align: center!important;   font-size: 19px;   padding-top: 20px; padding-bottom: 30px}	
+ 
+.section-1-ateliers {  height: 390px;}	
+.section-2-seminaires {   height: 300px;   top: 190px; }
+.section-2-seminaires a { padding-top:10px; }
+ .section-3-innovations {  height: 400px;  padding-top: 70px;  top: 480px;}
+.section-4-transformation {   height: 550px;   padding: 140px 0 0;   top: 800px; }
+.section-4-transformation .totem { display: none;}
+.section-4-transformation .row a { padding-top: 0 0 70px 0;  display: block;   position: inherit;  text-align: center;   width: 100%;}
+.section-5-lancement { padding: 150px 0 0 0;   height: 750px;   top: 1290px; }
+.section-5-lancement .row a { display: block; padding: 0 0 80px 0;   position: inherit; }
+
+ }
+		
+
+

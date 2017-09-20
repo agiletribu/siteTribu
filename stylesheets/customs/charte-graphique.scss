@@ -1,0 +1,115 @@
+// font-family: 'Lato', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300,400italic,900);
+$lato : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 
+ @import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans');
+$BubblegumSans: 'Bubblegum Sans', cursive;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+$opensans: 'Open Sans Condensed', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700');
+$caveat: 'Caveat', cursive;
+
+
+/* *********************** */
+/*     CHARTE GRAPHIQUE   */
+/* ********************* */
+ 
+// CORRECTION DE LA GRILLE
+@media only screen and (min-width:20px) and (max-width:767px) {
+.row {  margin-left: -5px;  margin-right: -5px;}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {    padding-left:  5px;  padding-right:  5px; }
+} 
+  
+
+// STYLES
+
+ 
+h2 { color: $text-color; padding:  0; margin:0 0 10px 0; font-weight: 700;}
+
+h3 { padding:0; margin: 0 0 5px 0; color: $text-color;}
+h4 { padding:0; margin: 0 0 5px 0; color: $text-color;}
+h5 { padding:0; margin: 0 0 5px 0; color: $text-color;}
+h6 { padding:0; margin: 0 0 5px 0; color: $text-color;}
+h7 { padding:0; margin: 0 0 5px 0; color: $text-color;}
+
+ 
+main ul { margin-left: 20px; margin-bottom: 20px;} 
+main ul li::before  { display:inline-block; font-family:Arial, sans-serif; line-height:1em; content:'\2022'; padding-right:9px; font-size:17px;}
+main ul.list-unstyled li::before { display:none;}
+ 
+main ol li { list-style: decimal;}
+ 
+p { padding:0; margin:0 0 15px 0;  word-wrap:break-word;   }
+
+a {   text-decoration:none;  }
+a img { border:none; }
+
+
+a.animated.link {display: inline-block;}
+a.animated.link::after {transition: width 400ms cubic-bezier(0.68, -0.3, 0.265, 1.3); margin:0; padding:0; display: block; width: 0 ; height: 1px; background-color: $brand-primary; content:"";}
+a.animated.link:hover::after { transition: width 400ms cubic-bezier(0.68, -0.3, 0.265, 1.3);width: 100%;}
+a.animated.link:hover,
+a.animated.link:hover span { text-decoration:none!important; }
+
+
+
+
+hr {-moz-box-sizing:content-box; box-sizing:content-box; display:block; border:0; margin:0; padding:0; height:15px; }
+ 
+main img { max-width:100%; height:auto; }
+
+/* Tooltip */
+div.tooltip-inner {  max-width: none; white-space: nowrap;}
+.tooltip {  animation-duration:2s; animation-delay:2s ;   animation-iteration-count: infinite;}
+
+/* tableaux */ 
+table {  width:100%; margin:0 0 15px 0;}
+table td  { vertical-align: middle; padding: 5px; }
+table th { vertical-align: middle;background-color: $brand-primary; color: #fff; font-weight: 700; padding: 5px 8px;}
+.table-striped > tbody > tr:nth-of-type(2n+1) {  background-color: #f0f0f0;}
+
+
+/* article-content */
+.section-articles {  padding-bottom:100px; background-color: #65b650; padding-top: 60px;}
+.article-content { background-color: rgb(255, 255, 255); margin: 0 0 40px 0;
+  box-shadow: 0px 1px 0px 0px rgba(25, 22, 1, 0.3); padding: 32px 37px;}
+.article-content p { font-size: 17px; color: #385230;}
+
+/* jumbotron-baseline */
+.jumbotron-baseline { position: relative; clear: both; float: non; width: 100%; background: url(../img/grass-front.png)  repeat-x 0 0; text-align: center; padding: 172px 0 86px 0 ;}
+.jumbotron-baseline p  { color: #fff; font-family: $BubblegumSans; font-size: 35px;}
+
+
+
+.jumbotron-blue { background-color: #32a7d2;}
+.jumbotron-green { background-color: #65b650;}
+.jumbotron-brown { background-color: #ab7a59;}
+
+
+// IPAD VERTICAL         
+@media only screen and (min-width:768px) and (max-width:991px) {
+ #bd .article-content .text-right { text-align: center!important;}
+	
+
+}
+
+ 
+
+
+// SMARTPHONE VERTICAL 
+@media only screen and (min-width:20px) and (max-width:767px) {
+#bd .article-content 	.col-sm-6 { margin-bottom: 10px;}
+#bd .article-content .text-left { text-align: center!important;}	
+#bd .article-content .text-right { text-align: center!important;}	
+.jumbotron-baseline { padding: 132px 0 40px 0 ;}
+.jumbotron-baseline p  {  font-size: 21px;}
+	
+	
+ }
+		
+
+
+
+
