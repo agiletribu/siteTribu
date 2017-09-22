@@ -1,7 +1,7 @@
 var Configuration = {
 
   // -- API endpoint
-  apiEndpoint: 'https://ukulele.prismic.io/api',
+  apiEndpoint: 'https://agiletribu.prismic.io/api',
   //accessToken: '',
 
   // -- OAuth
