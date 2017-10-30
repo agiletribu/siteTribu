@@ -1,16 +1,17 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
   "hosting": {
     "public": ".",
     "ignore": [
       "firebase.json",
       ".gitignore",
       ".firebaserc",
-      "database.rules.json",
       ".git/**"
     ],
+    "redirects": [ {
+      "source" : "/permagile",
+      "destination" : "/permagile.html",
+      "type" : 301
+    }],
     "headers": [ {
 	      "source" : "**/*.@(jpg|jpeg|gif|png|svg)",
 	      "headers" : [ {
