@@ -2,13 +2,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>INTEGRATION</title>
+<title>CONTENU</title>
 <meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
 <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 <script type="text/javascript" src="dist/js/jquery.js"></script>
 <script type="text/javascript" src="dist/js/bootstrap.js"></script>
 <script type="text/javascript" src="dist/js/plugins.js"></script>
 <script type="text/javascript" src="dist/js/global.js"></script>
+
+<!-- Prismic -->
+<script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- custom JS -->
+<script src="js/prismic-helpers.js"></script>
+<script src="js/tribu.js"></script>
+
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,13 +41,11 @@
 		<aside id="sidebar">
 			<p class="sidebar-logo text-center"><img src="dist/img/agile-tribu-smartphone.png" width="238" height="97" alt=""/></p>
 			<ul class="list-menu">
-				<li><a href="#">La tribu</a></li>
-				<li><a href="#">Nos produits et services</a></li>
-				<li><a href="#" class="active">Gestion des risques</a></li>
-				<li><a href="#">Nos interventions</a></li>
-				<li><a href="#">Les publications</a></li>
-				<li><a href="#">Liste des membres</a></li>
-				<li><a href="1-la-tribu.html?#section-contact">Contact</a></li>
+				<li><a href="La-tribu.html">La tribu</a></li>
+				<li><a href="#" style="color: grey;">Nos produits et services</a></li>
+				<li><a href="Formats-interventions.html">Nos formats d'interventions</a></li>
+				<li><a href="http://blog.agiletribu.com">Nos publications</a></li>
+				<li><a href="La-tribu.html?#section-contact">Contact</a></li>		
 			</ul>
 		</aside>
 		<!-- / side bar --> 
@@ -46,8 +53,7 @@
 	
 	<!-- start HEADER -->
 	<header id="hd">
-		<h1 class="tiny-title">Gestion des risques en management visuel<br>
-			pour product owner </h1>
+		<h1 id="contribution_title" class="tiny-title"/>
 	</header>
 	<!-- end HEADER --> 
 	
@@ -59,63 +65,13 @@
 					<div class="col-sm-12"> 
 						
 						<!-- article content -->
-						<article class="article-content">
-							<div class="row">
-								<div class="col-sm-6">
-									<p class="text-center">Lorsque l’on gère un produit en Agile, 
-										les Product Owner doivent aussi gérer les risques. </p>
-								</div>
-								<div class="col-sm-6 text-right"><img src="dist/img/tableau.jpg" width="412" height="274" alt=""/></div>
-							</div>
-						</article>
-						<!-- / article content --> 
-						
-						<!-- article content -->
-						<article class="article-content">
-							<div class="row">
-								<div class="col-sm-6 text-left"><img src="dist/img/tableau.jpg" width="412" height="274" alt=""/> </div>
-								<div class="col-sm-6">
-									<p class="text-center">Lorsque l’on gère un produit en Agile, 
-										les Product Owner doivent aussi gérer les risques. </p>
-								</div>
-							</div>
-						</article>
-						<!-- / article content --> 
-						<!-- article content -->
-						<article class="article-content">
-							<div class="row">
-								<div class="col-sm-6">
-									<p class="text-center">Lorsque l’on gère un produit en Agile, 
-										les Product Owner doivent aussi gérer les risques. </p>
-								</div>
-								<div class="col-sm-6 text-right"><img src="dist/img/tableau.jpg" width="412" height="274" alt=""/></div>
-							</div>
-						</article>
-						<!-- / article content --> 
-						<!-- article content -->
-						<article class="article-content">
-							<div class="row">
-								<div class="col-sm-6">
-									<h2>Titre du bloc</h2>
-									<h3>Sous titre du bloc</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-									<ul>
-										<li>Liste à puce</li>
-										<li>Liste à puce</li>
-										<li>Liste à puce</li>
-										<li>Liste à puce</li>
-										<li>Liste à puce</li>
-										<li>Liste à puce</li>
-									</ul>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
-								</div>
-								<div class="col-sm-6 text-right"><img src="dist/img/tableau.jpg" width="412" height="274" alt=""/></div>
-							</div>
-						</article>
-						<!-- / article content --> 
-						
+			            <article class="article-content">
+			              <div class="row">
+			                <div  class="col-sm-12">
+                            	<div id="contribution-detail"></div>			                          
+			              </div>
+			            </article>
+			            <!-- / article content --> 
 					</div>
 				</div>
 			</div>
@@ -191,5 +147,15 @@
 	</footer>
 	<!-- end FOOTER --> 
 </div>
+
+	<!-- Javascripts
+    ================================================== -->
+	<script src="js/prismic.js"></script>
+
+	<script type="text/javascript">
+        $(function() {
+            displayContributionDetails();
+        });
+    </script>
 </body>
 </html>
