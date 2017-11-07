@@ -5,7 +5,7 @@ function displayContributionDetails(){
         var uid = Helpers.queryString['uid'];
         var id = Helpers.queryString['id'];
 
-        ctx.api.form("everything").ref(ctx.ref).query('[[:d = at(document.id, "' + id + '")]]').submit(function(err, docs) {
+        ctx.api.form("everything").ref(ctx.ref).query('[[:d = at(my.contribution.uid, "' + uid + '")]]').submit(function(err, docs) {
 
             if (err) { Configuration.onPrismicError(err); return; }
 
