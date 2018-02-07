@@ -1,3 +1,5 @@
+//Prismic configuration, you shouldn't touch it
+
 var Configuration = {
 
   // -- API endpoint

@@ -1,3 +1,5 @@
+//Utilisé uniquement pour la gestion du formulaire de contact
+
 $(function() {
 
     $("input,textarea").jqBootstrapValidation({
