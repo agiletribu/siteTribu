@@ -5,13 +5,25 @@
 	<title>Les publications de la tribu</title>
 	<meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
 	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
 	<script type="text/javascript" src="dist/js/jquery.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="dist/js/plugins.js"></script>
 	<script type="text/javascript" src="dist/js/global.js"></script>
 
-	<!-- Favicons -->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+	<!-- Prismic -->
+	<script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+	<!-- custom JS -->
+	<script src="js/prismic-helpers.js"></script>
+	<script src="js/tribu.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -93,114 +105,36 @@
 						</form>
 					</div>
 					<div class="col-sm-8"> 
-						
-						<!-- article -->
-						
-						<article class="panel panel-default">
-							<div class="panel-heading">
-								<h2><a href="#">Gestion des risques pour PO</a></h2>
-								<p class="p-share"> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-6"><img src="dist/img/lego.jpg" width="359" height="215" alt=""/></div>
-									<div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </div>
-								</div>
-							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-sm-6">
-										<p class="p-theme">Thème : <a href="#">transformation</a>, <a href="#">PO</a></p>
+						<div id="contrib_all" ></div>
+
+						<script id="contribution-item-template" type="text/x-handlebars-template">
+	                    		{{#each this}}
+
+	                    		<article class="panel panel-default">
+									<div class="panel-heading">
+										<h2><a href="{{url}}">{{{titre}}}</a></h2>
+										<p class="p-share"> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
 									</div>
-									<div class="col-sm-6 text-right">
-										<p><a href="#" class="btn-read">Lire l'article</a></p>
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-6"><img src="{{imageUrl}}" width="359" height="215" alt=""/></div>
+											<div class="col-sm-6">{{contenu}}</div>
+										</div>
 									</div>
-								</div>
-							</div>
-						</article>
-						
-						<!-- / article --> 
-						
-						<!-- article -->
-						
-						<article class="panel panel-default">
-							<div class="panel-heading">
-								<h2><a href="#">Gestion des risques pour PO</a></h2>
-								<p class="p-share"> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-6"><img src="dist/img/lego.jpg" width="359" height="215" alt=""/></div>
-									<div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </div>
-								</div>
-							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-sm-6">
-										<p class="p-theme">Thème : <a href="#">transformation</a>, <a href="#">PO</a></p>
+									<div class="panel-footer">
+										<div class="row">
+											<div class="col-sm-6">
+												<p class="p-theme">Thème : <a href="#">{{theme}}</a></p>
+											</div>
+											<div class="col-sm-6 text-right">
+												<p><a href="{{url}}" class="btn-read">Lire l article</a></p>
+											</div>
+										</div>
 									</div>
-									<div class="col-sm-6 text-right">
-										<p><a href="#" class="btn-read">Lire l'article</a></p>
-									</div>
-								</div>
-							</div>
-						</article>
+								</article>
+		                     	{{/each}}  
+		                   </script>
 						
-						<!-- / article --> 
-						
-						<!-- article -->
-						
-						<article class="panel panel-default">
-							<div class="panel-heading">
-								<h2><a href="#">Gestion des risques pour PO</a></h2>
-								<p class="p-share"> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-6"><img src="dist/img/lego.jpg" width="359" height="215" alt=""/></div>
-									<div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </div>
-								</div>
-							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-sm-6">
-										<p class="p-theme">Thème : <a href="#">transformation</a>, <a href="#">PO</a></p>
-									</div>
-									<div class="col-sm-6 text-right">
-										<p><a href="#" class="btn-read">Lire l'article</a></p>
-									</div>
-								</div>
-							</div>
-						</article>
-						
-						<!-- / article --> 
-						
-						<!-- article -->
-						
-						<article class="panel panel-default">
-							<div class="panel-heading">
-								<h2><a href="#">Gestion des risques pour PO</a></h2>
-								<p class="p-share"> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-							</div>
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-6"><img src="dist/img/lego.jpg" width="359" height="215" alt=""/></div>
-									<div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat... </div>
-								</div>
-							</div>
-							<div class="panel-footer">
-								<div class="row">
-									<div class="col-sm-6">
-										<p class="p-theme">Thème : <a href="#">transformation</a>, <a href="#">PO</a></p>
-									</div>
-									<div class="col-sm-6 text-right">
-										<p><a href="#" class="btn-read">Lire l'article</a></p>
-									</div>
-								</div>
-							</div>
-						</article>
-						
-						<!-- / article --> 
 						
 						<!-- PAGINATION --> 
 						
@@ -208,7 +142,7 @@
 						<p class="p-pagination hidden-xs"><a href="#">Précédent</a> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">Suivant</a> </p>
 						<p class="select-pagination text-right visible-xs-block" >
 							<select class="form-control">
-								<option selected="">Précéndent</option>
+								<option selected="">Précédent</option>
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -332,5 +266,16 @@
 	<!-- end FOOTER --> 
 	
 </div>
+
+	<!-- Javascripts
+    ================================================== -->
+	<script src="js/prismic.js"></script>
+
+	<script type="text/javascript">
+        $(function() {
+            displayContributionsList();
+        });
+    </script>
+
 </body>
 </html>
