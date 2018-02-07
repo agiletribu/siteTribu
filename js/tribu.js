@@ -46,21 +46,18 @@ function displayContributionsList(){
             //Change result to an object
             var all_contrib = convertContribToObject(docs.results);
 
-            console.log(all_contrib);
-
             var contrib = $("#contribution-item-template").html();                      
             var contrib_template = Handlebars.compile(contrib);
 
-            $("#contrib_all").html(contrib_template(all_contrib));
-/*
             var services = _.filter(all_contrib, _.iteratee(['categorie', 'service']));
+            console.log(services);
             var partages = _.filter(all_contrib, _.iteratee(['categorie', 'partage']));
             var communautes = _.filter(all_contrib, _.iteratee(['categorie', 'communaute']));
 
             $("#contrib_services").html(contrib_template(services));
             $("#contrib_partages").html(contrib_template(partages));
             $("#contrib_communautes").html(contrib_template(communautes));
-*/
+
         });
     });
 }
