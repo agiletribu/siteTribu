@@ -46,80 +46,80 @@ $(document).ready(function() {
 
 
 
- 
- /* ********************** BREAK POINT DECLARATIONS ********************** */
-assign_bootstrap_mode();
-
-  
-	/* **********************  MENU ********************** */ 
- 		
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-		$("body").toggleClass("bodytoggledmenu");
-		$("#menu-toggle").toggleClass("active");
-    });
 	 
-    
-				 
- 
- 
-/* ********************** BLOCK CLICK ********************** */
-$(".ft-title").click(function(){
-					window.location=$(this).find("a").prop('href');
-	        return false;
-});
+	 /* ********************** BREAK POINT DECLARATIONS ********************** */
+	assign_bootstrap_mode();
 
- 
- $(".block-social-perso").click(function(){
-					window.location=$(this).find("a").prop('href');
-	        return false;
-});
+	  
+		/* **********************  MENU ********************** */ 
+	 		
+	    $("#menu-toggle").click(function(e) {
+	        e.preventDefault();
+	        $("#wrapper").toggleClass("toggled");
+			$("body").toggleClass("bodytoggledmenu");
+			$("#menu-toggle").toggleClass("active");
+	    });
+		 
+	    
+					 
+	 
+	 
+	/* ********************** BLOCK CLICK ********************** */
+	$(".ft-title").click(function(){
+						window.location=$(this).find("a").prop('href');
+		        return false;
+	});
+
+	 
+	 $(".block-social-perso").click(function(){
+						window.location=$(this).find("a").prop('href');
+		        return false;
+	});
 
 
 	/* ********************** OWL********************** */	
   		
 		
-// Go to the next item
-$('.btn-prev').click(function() {
- $('#slider-owl').trigger('prev.owl.carousel');
-})
-// Go to the previous item
-$('.btn-next').click(function() {
-    // With optional speed parameter
-    // Parameters has to be in square bracket '[]'
- $('#slider-owl').trigger('next.owl.carousel');
-})
+	// Go to the next item
+	$('.btn-prev').click(function() {
+	 $('#slider-owl').trigger('prev.owl.carousel');
+	})
+	// Go to the previous item
+	$('.btn-next').click(function() {
+	    // With optional speed parameter
+	    // Parameters has to be in square bracket '[]'
+	 $('#slider-owl').trigger('next.owl.carousel');
+	})
  
 
  
-  
-$("#slider-owl").owlCarousel( { 
-autoplay:true, // peut être une valeur numerique ex:12000
- 
-navigation : true, 
-pagination:false,   
- 
-navigationText :["précédent","suivant"],
-	
-	responsive : {
-    // breakpoint 
-   992 : {
-        items:5
-    },
-    // breakpoint  
-    768: {
-       items:3
-    },
-    // breakpoint  
-    20 : {
-          items:1
-    }
-}
-			
-			
-});
-
+/*
+	$("#slider-owl").owlCarousel( { 
+	autoplay:true, // peut être une valeur numerique ex:12000
+	 
+	navigation : true, 
+	pagination:false,   
+	 
+	navigationText :["précédent","suivant"],
+		
+		responsive : {
+	    // breakpoint 
+	   992 : {
+	        items:5
+	    },
+	    // breakpoint  
+	    768: {
+	       items:3
+	    },
+	    // breakpoint  
+	    20 : {
+	          items:1
+	    }
+	}
+				
+				
+	});
+*/
   
  
 /* end document */
