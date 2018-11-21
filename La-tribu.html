@@ -13,6 +13,18 @@
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
+	<!-- Prismic -->
+	<script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+
+
+	<!-- custom JS -->
+	<script src="js/prismic-helpers.js"></script>
+	<script src="js/tribu.js"></script>
+
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -59,65 +71,18 @@
 		<section class="section-trombinoscope">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12 text-center"> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/thomas.jpg" width="122" height="122" alt="Thomas"/><strong>Thomas Guyon</strong> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
-						</div>
-						
-						<!-- trombo --> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/alice.jpg" width="122" height="122" alt="Thomas"/><strong>Alice Barralon</strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> <a href="#" class="link-social"><i class="fa fa-slideshare" aria-hidden="true"></i> </a> </p>
-						</div>
-						
-						<!-- trombo --> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/nicolas.jpg" width="122" height="122" alt="Thomas"/><strong>Nicolas Montens</strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-						</div>
-						
-						<!-- trombo --> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/yannick.jpg" width="122" height="122" alt="Thomas"/><strong>Yannick Ameur</strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> <a href="#" class="link-social"><i class="fa fa-slideshare" aria-hidden="true"></i> </a> </p>
-						</div>
-						
-						<!-- trombo --> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/thibaut.jpg" width="122" height="122" alt="Thomas"/><strong>Thibaut Appert</strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-						</div>
-						
-						<!-- trombo --> 
-						
-					</div>
-					<div class="col-sm-12 text-center"> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/arturo.jpg" width="122" height="122" alt="Arturo Uscátegui Restrepo"/><strong>Arturo Uscátegui Restrepo </strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-						</div>
-						
-						<!-- trombo --> 
-						
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/nathaniel.jpg" width="122" height="122" alt="Arturo Uscátegui Restrepo"/><strong>Nathaniel Richard </strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-						</div>
-						
-						<!-- trombo -->
 
-						<!-- trombo -->
-						<div class="block-trombo">
-							<p><img src="dist/img/marronnier.jpg" width="122" height="122" alt="Jean-Fran&ccedil;ois Marronnier"/><strong>Jean-Fran&ccedil;ois Marronnier </strong> <a href="#" class="link-social"><i class="fa fa-twitter" aria-hidden="true"></i> </a> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a> </p>
-						</div>
+					<div id="members" class="col-sm-12 text-center"> 
+						<script id="member-template" type="text/x-handlebars-template">
+	                		{{#each this}}
+	                    		<div class="block-trombo">
+									<p><img src="{{photoUrl}}" width="122" height="122" alt="{{name}}"/><strong>{{name}}</strong> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+								</div>
+	                     	{{/each}}  
+	                   </script>
+						
 
+						
 					</div>
 				</div>
 			</div>
@@ -377,6 +342,16 @@
 
 <script type="text/javascript" src="dist/js/jqBootstrapValidation.js"></script>
 <script type="text/javascript" src="js/contact.js"></script>
+
+<!-- Javascripts
+================================================== -->
+<script src="js/prismic.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        displayTribuMembers();
+    });
+</script>
 
 </body>
 </html>
