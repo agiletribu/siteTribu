@@ -45,17 +45,17 @@ function convertTribuMembersToObject(prismicResults){
         extrait += " ..."
 
         var liens = [];        
-/*        if(prismic_formateur.data['formateur.liens']){
+        if(prismic_formateur.data['formateur.liens']){
             var prismicLiens = prismic_formateur.data['formateur.liens'].value;
             prismicLiens.forEach(function(prismic_lien){
                 var type = prismic_lien.site.value;
-                var url = prismic_lien.url.value.url;
+                var url = prismic_lien.url.value.url;                
+                var html_lien = '<a href="' + url +'" class="link-social"><i class="fa fa-' + type + '" aria-hidden="true"></i></a>';
 
-                var html_lien = '<a href="' + url +'" class="fa fa-' + type + '"></a>';
                 liens.push(html_lien);
             });
         }
-*/
+
         var member = new TribuMember(prismic_formateur.id, prismic_formateur.slug, prismic_formateur.data['formateur.name'].value,
             prismic_formateur.data['formateur.image'].value.main.url, extrait, bio.asHtml(), liens);
 

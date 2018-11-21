@@ -76,12 +76,15 @@
 						<script id="member-template" type="text/x-handlebars-template">
 	                		{{#each this}}
 	                    		<div class="block-trombo">
-									<p><img src="{{photoUrl}}" width="122" height="122" alt="{{name}}"/><strong>{{name}}</strong> <a href="#" class="link-social"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+									<p>
+										<img src="{{photoUrl}}" width="122" height="122" alt="{{name}}"/><strong>{{name}}</strong>
+										{{#each liens}}
+											{{{this}}}
+										{{/each}}
+									</p>
 								</div>
 	                     	{{/each}}  
 	                   </script>
-						
-
 						
 					</div>
 				</div>
