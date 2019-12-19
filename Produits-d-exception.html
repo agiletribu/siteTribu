@@ -9,7 +9,8 @@
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="dist/js/plugins.js"></script>
 	<script type="text/javascript" src="dist/js/global.js"></script>
-
+	<!-- custom JS -->
+	<script src="js/menus.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -17,7 +18,7 @@
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-65085367-1', 'auto');
-	  ga('send', 'pageview');
+	  ga('send', 'pageview', location.pathname);
 	</script>
 
 </head>
@@ -27,21 +28,8 @@
 	<div class="bd-menu">
 		<div class="menu-hamburger"><a href="#menu-toggle" id="menu-toggle" class="animated"><i class="fa fa-bars" aria-hidden="true"></i> </a> </div>
 	</div>
-	<div id="mainmenu"> 
-		
-		<!-- side bar -->
-		<aside id="sidebar">
-			<p class="sidebar-logo text-center"><img src="dist/img/agile-tribu-smartphone.png" width="238" height="97" alt=""/></p>
-			<ul class="list-menu">
-				<li><a href="La-tribu.html">La tribu</a></li>
-				<li><a href="#" style="color: grey;">Nos produits et services</a></li>
-				<li><a href="Formats-interventions.html">Nos formats d'interventions</a></li>
-				<li><a href="http://blog.agiletribu.com">Nos publications</a></li>
-				<li><a href="La-tribu.html?#section-contact">Contact</a></li>				
-			</ul>
-		</aside>
-		<!-- / side bar --> 
-	</div>
+	<div id="mainmenu" data-include="mainmenu">
+	</div>	
 	
 	<!-- start HEADER -->
 	<header id="hd">

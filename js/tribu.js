@@ -1,3 +1,11 @@
+//Pour afficher le menu
+$(function(){
+	    var includes = $('[data-include]');
+	    jQuery.each(includes, function(){
+	      var file = $(this).data('include') + '.html';
+	      $(this).load(file);
+	    });
+	  });
 //Pour afficher tous les membres depuis Prismic
 function displayTribuMembers(){
     Helpers.withPrismic(function(ctx) {
