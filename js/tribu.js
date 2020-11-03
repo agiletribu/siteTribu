@@ -243,9 +243,15 @@ function displayFormationDetails(){
             var doc = docs.results[0];
 
             dates = doc.data['offre-formation.prochaines_dates'].value
+            datesHTML = ""
             dates.forEach(function(date){
-                console.log(date)
-                console.log(date.date_formation.value)
+                date_formation = date.date_formation.value;
+                date_lien = date.inscription_lien.value.url;
+
+                datesHTML += '<li><i class="fa fa-calendar" aria-hidden="true"></i> ' +
+                date_formation+' '
+                +'<a href="'+date_lien+'">(inscription)</a>'
+                +'</li>';
             });
 
             // If there is no documents for this id
@@ -259,6 +265,7 @@ function displayFormationDetails(){
             $("#formation_title").text(titre);
             $("#formation_duree").text(doc.getStructuredText('offre-formation.duree').asText());
             $("#formation_tarif").text(doc.getStructuredText('offre-formation.tarif').asText());
+            $("#formation_dates").html(datesHTML);
             $("#formation_detail").html(doc.getStructuredText('offre-formation.contenu').asHtml());
 
         });
