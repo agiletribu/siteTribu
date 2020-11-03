@@ -73,36 +73,6 @@ function convertTribuMembersToObject(prismicResults){
     return formateurObjectList;
 }
 
-//Pour afficher une page de contenu venant de prismic
-function displayContributionDetails(){
-    Helpers.withPrismic(function(ctx) {
-
-        // Retrieve the document
-        var uid = Helpers.queryString['uid'];
-        var id = Helpers.queryString['id'];
-
-        ctx.api.form("everything").ref(ctx.ref).query('[[:d = at(my.contribution.uid, "' + uid + '")]]').submit(function(err, docs) {
-
-            if (err) { Configuration.onPrismicError(err); return; }
-
-            var doc = docs.results[0];
-
-            // If there is no documents for this id
-            if(!doc) {
-                document.location = '404.html';
-            }
-
-            var titre = doc.getStructuredText('contribution.titre').asText();
-
-            document.title = "AgileTribu - " + titre;
-            $("#contribution_title").text(titre);
-            $("#contribution-detail").html(doc.getStructuredText('contribution.contenu').asHtml());
-
-        });
-    });
-
-}
-
 //Pour lister tous les contenus stockés dans prismic
 function displayContributionsList(){
     var query = generateQueryFromSelections();
@@ -125,7 +95,6 @@ function displayContributionsList(){
             var contrib_template = Handlebars.compile(contrib);
 
             var services = _.filter(all_contrib, _.iteratee(['categorie', 'service']));
-            console.log(services);
             var partages = _.filter(all_contrib, _.iteratee(['categorie', 'partage']));
             var communautes = _.filter(all_contrib, _.iteratee(['categorie', 'communaute']));
 
@@ -184,11 +153,115 @@ function convertContribToObject(prismicResults){
         var extrait = _.take(contenu.asText().split(' '), 50).join(' ');
         extrait += " ..."
 
-        var contribution = new Contribution(prismic_contrib.id, prismic_contrib.uid, prismic_contrib.getStructuredText('contribution.titre').asHtml(),
+        var contribution = new Contribution(prismic_contrib.id, prismic_contrib.uid,
+            prismic_contrib.getStructuredText('contribution.titre').asHtml(),
             imageUrl, prismic_contrib.data['contribution.categorie'].value, prismic_contrib.data['contribution.theme'].value, extrait);
 
         contributionObjectList.push(contribution);
     });
 
     return contributionObjectList;
+}
+
+//Pour lister toutes les formations stockées dans prismic
+function displayFormationsList(){
+    var query = '[[:d = at(document.type, "offre-formation")]]';
+
+    Helpers.withPrismic(function(ctx) {
+        var request = ctx.api.form("everything").ref(ctx.ref);
+        request.query(query);
+        request.set('page', parseInt(window.location.hash.substring(1)) || 1 )
+            .pageSize(100)
+            .submit(function(err, docs) {
+            if (err) { Configuration.onPrismicError(err); return; }
+
+            console.log(docs.results)
+            //Change result to an object
+            var all_contrib = convertFormationsToObject(docs.results);
+            var contrib = $("#contribution-item-template").html();                      
+            var contrib_template = Handlebars.compile(contrib);
+
+            $("#contrib_formations").html(contrib_template(all_contrib));
+        });
+    });
+}
+
+function Formation(id, uid, titre, imageUrl, contenu, type, duree, tarif) {
+    this.id = id;
+    this.uid = uid;
+    this.titre = titre;
+    this.imageUrl = imageUrl;
+    this.contenu = contenu;
+    this.type = type;
+    this.duree = duree;
+    this.tarif = tarif;
+    this.url = function() {return "/Formation-details.html?uid="+this.uid;};
+}
+
+function convertFormationsToObject(prismicResults){
+    formationObjectList = [];
+
+    prismicResults.forEach(function(prismic_contrib){
+
+        var contenu = prismic_contrib.getStructuredText('offre-formation.contenu');
+
+        var imageUrl = "/img/favicon.ico";
+
+        if(contenu.getFirstImage()){
+            imageUrl = contenu.getFirstImage().url;
+        }
+
+        var extrait = _.take(contenu.asText().split(' '), 50).join(' ');
+        extrait += " ..."
+
+        var formation = new Formation(prismic_contrib.id, prismic_contrib.uid,
+            prismic_contrib.getStructuredText('offre-formation.titre').asHtml(),
+            imageUrl, extrait, 
+            prismic_contrib.data['offre-formation.type_formation'].value,
+            prismic_contrib.getStructuredText('offre-formation.duree').asText(),
+            prismic_contrib.getStructuredText('offre-formation.tarif').asText()
+            );
+
+        formationObjectList.push(formation);
+    });
+
+    return formationObjectList;
+}
+
+//Pour afficher une page de contenu venant de prismic
+function displayFormationDetails(){
+    Helpers.withPrismic(function(ctx) {
+
+        // Retrieve the document
+        var uid = Helpers.queryString['uid'];
+        var id = Helpers.queryString['id'];
+
+        ctx.api.form("everything").ref(ctx.ref).query('[[:d = at(my.offre-formation.uid, "' + uid + '")]]').submit(function(err, docs) {
+
+            if (err) { Configuration.onPrismicError(err); return; }
+
+            var doc = docs.results[0];
+
+            dates = doc.data['offre-formation.prochaines_dates'].value
+            dates.forEach(function(date){
+                console.log(date)
+                console.log(date.date_formation.value)
+            });
+
+            // If there is no documents for this id
+            if(!doc) {
+                document.location = '404.html';
+            }
+
+            var titre = doc.getStructuredText('offre-formation.titre').asText();
+
+            document.title = "AgileTribu - " + titre;
+            $("#formation_title").text(titre);
+            $("#formation_duree").text(doc.getStructuredText('offre-formation.duree').asText());
+            $("#formation_tarif").text(doc.getStructuredText('offre-formation.tarif').asText());
+            $("#formation_detail").html(doc.getStructuredText('offre-formation.contenu').asHtml());
+
+        });
+    });
+
 }

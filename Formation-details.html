@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>CONTENU</title>
+<meta name="viewport" content="user-scalable=no, user-scalable=no, initial-scale=1.0, maximum-scale=1, width=device-width" />
+<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	
+<script type="text/javascript" src="dist/js/jquery.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="dist/js/plugins.js"></script>
+<script type="text/javascript" src="dist/js/global.js"></script>
+
+<!-- Prismic -->
+<script src="https://unpkg.com/prismic.io@2.0.0/dist/prismic.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- custom JS -->
+<script src="js/menus.js"></script>
+<script src="js/prismic-helpers.js"></script>
+<script src="js/tribu.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-65085367-1', 'auto');
+	  ga('send', 'pageview');
+	</script>	
+</head>
+
+<body class="bodytoggledmenu">
+<div id="wrapper" class="toggled">
+	<div class="bd-menu">
+		<div class="menu-hamburger"><a href="#menu-toggle" id="menu-toggle" class="animated"><i class="fa fa-bars" aria-hidden="true"></i> </a> </div>
+	</div>
+	<div id="mainmenu" data-include="mainmenu">
+	</div>
+	<!-- start HEADER -->
+	<header id="hd">
+		<h1 id="formation_title" class="tiny-title"/>
+	</header>
+	<!-- end HEADER --> 
+	
+	<!-- start MAIN -->
+	<main id="bd">
+		<section class="section-articles">
+			<div class="container">
+				<div class="row">
+					<!-- NOTE : La sidebat de droite est clonnée pour qu'en smartphone elle soit visible en premier -->
+					<div class="col-sm-4 col-lg-offset-1 col-lg-3 visible-xs-block">
+						<h2>Prochaines formations :</h2>
+						<p> En cours...</p>
+					</div>
+
+					<!-- CONTENU -->
+					<div class="col-sm-8">
+			            <article class="article-content">
+			             	<div class="row">
+			                	<div  class="col-sm-12">
+                            		<div id="formation_detail"></div>
+                            	</div>
+			              	</div>
+			           
+			              	<div class="row">
+			                	<div class="col-sm-12">
+			                		<h2>Formateurs :</h2>
+                            	</div>
+			              	</div>
+			            </article>
+					</div>
+
+					<!-- NOTE : cette sidebar est cachée en mode smartphone   -->
+					<div class="col-sm-4 col-lg-offset-1 col-lg-3 hidden-xs">
+						<h2>Durée :</h2>
+						<p><div id="formation_duree"></div></p>
+
+						<h2>Tarif HT:</h2>
+						<p><div id="formation_tarif"></div></p>
+
+						<h2>Prochaines dates :</h2>
+						<p> En cours...</p>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<a href="Formations.html"><i class="fa fa-chevron-left" aria-hidden="true"></i> Retour formations</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- end MAIN --> 
+	
+	<!-- Jumbootron baseline -->
+	<div class="jumbotron-baseline jumbotron-green">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<p>Notre ambition : pratiquer, coacher et former &agrave; l'agilit&eacute; pour contribuer &agrave; la cr&eacute;ation d'&eacute;cosyst&egrave;me de qualit&eacute; durable.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / Jumbootron baseline --> 
+	
+	<!-- start FOOTER -->
+	
+	<footer id="ft">
+		<div class="hd">
+			<div class="container"> 
+				
+				<!-- row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="ft-title">
+							<h2><a href="https://www.meetup.com/fr-FR/AgileTribu/" target="_blank">Cokiffer avec nous</a> </h2>
+							<p>Liste de<br class="visible-xs-block">
+								nos prochains</p>
+						</div>
+					</div>
+				</div>
+				<!-- / row --> 
+			</div>
+		</div>
+		<div class="bd">
+			<div class="container"> 
+				
+				<!-- row -->
+				<div class="row">
+					<div class="col-sm-7">
+						<h2>Nous contacter</h2>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-lg-offset-1 col-lg-5">
+								<div class="block-adress">
+									<p> <strong>AgileTribu</strong>, <br>
+										4 ter passage de la main d'or <br>
+										75011 Paris</p>
+									<p><a href="#null" class="linking"><i class="fa fa-caret-right" aria-hidden="true"></i> nous trouver sur Google map</a></p>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6">
+								<p class="p-tel">+33(0) 6 14 60 40 80</p>
+								<p class="p-mail"> <a href="mailto:contact@agiletribu.com">contact@agiletribu.com</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-5 col-adhesion">
+						<h2>Adhérez à notre tribu...</h2>
+						<div class="block-adhesion">
+							<p>L’adhésion est gratuite <br>
+								et vous permets d’avoir accès à de nombreuses opportunitées</p>
+							<p class="text-right"><a href="#null" class="linking">En savoir +</a></p>
+						</div>
+					</div>
+				</div>
+				<!-- / row --> 
+			</div>
+		</div>
+	</footer>
+	<!-- end FOOTER --> 
+</div>
+
+	<!-- Javascripts
+    ================================================== -->
+	<script src="js/prismic.js"></script>
+
+	<script type="text/javascript">
+        $(function() {
+            displayFormationDetails();
+        });
+    </script>
+</body>
+</html>
