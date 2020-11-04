@@ -175,18 +175,21 @@ function displayFormationsList(){
             .submit(function(err, docs) {
             if (err) { Configuration.onPrismicError(err); return; }
 
-            console.log(docs.results)
             //Change result to an object
-            var all_contrib = convertFormationsToObject(docs.results);
-            var contrib = $("#contribution-item-template").html();                      
-            var contrib_template = Handlebars.compile(contrib);
+            var all_formations = convertFormationsToObject(docs.results);
 
-            $("#contrib_formations").html(contrib_template(all_contrib));
+            var formation = $("#formation-item-template").html();
+            var formation_template = Handlebars.compile(formation);
+            $("#contrib_formations").html(formation_template(all_formations));
+
+            var formation_date = $("#formation-date-template").html();
+            var formation_date_template = Handlebars.compile(formation_date);
+            $(".prochaine_formations").html(formation_date_template(all_formations));
         });
     });
 }
 
-function Formation(id, uid, titre, imageUrl, contenu, type, duree, tarif) {
+function Formation(id, uid, titre, imageUrl, contenu, type, duree, tarif, dates) {
     this.id = id;
     this.uid = uid;
     this.titre = titre;
@@ -195,15 +198,16 @@ function Formation(id, uid, titre, imageUrl, contenu, type, duree, tarif) {
     this.type = type;
     this.duree = duree;
     this.tarif = tarif;
+    this.dates = dates;
     this.url = function() {return "/Formation-details.html?uid="+this.uid;};
 }
 
 function convertFormationsToObject(prismicResults){
     formationObjectList = [];
 
-    prismicResults.forEach(function(prismic_contrib){
+    prismicResults.forEach(function(prismic_formation){
 
-        var contenu = prismic_contrib.getStructuredText('offre-formation.contenu');
+        var contenu = prismic_formation.getStructuredText('offre-formation.contenu');
 
         var imageUrl = "/img/favicon.ico";
 
@@ -214,18 +218,36 @@ function convertFormationsToObject(prismicResults){
         var extrait = _.take(contenu.asText().split(' '), 50).join(' ');
         extrait += " ..."
 
-        var formation = new Formation(prismic_contrib.id, prismic_contrib.uid,
-            prismic_contrib.getStructuredText('offre-formation.titre').asHtml(),
+        var formation = new Formation(prismic_formation.id, prismic_formation.uid,
+            prismic_formation.getStructuredText('offre-formation.titre').asHtml(),
             imageUrl, extrait, 
-            prismic_contrib.data['offre-formation.type_formation'].value,
-            prismic_contrib.getStructuredText('offre-formation.duree').asText(),
-            prismic_contrib.getStructuredText('offre-formation.tarif').asText()
+            prismic_formation.data['offre-formation.type_formation'].value,
+            prismic_formation.getStructuredText('offre-formation.duree').asText(),
+            prismic_formation.getStructuredText('offre-formation.tarif').asText(),
+            extractAllDatesAsHTML(prismic_formation)
             );
 
         formationObjectList.push(formation);
     });
 
     return formationObjectList;
+}
+
+function extractAllDatesAsHTML(doc){
+    dates = doc.data['offre-formation.prochaines_dates'].value
+
+    datesHTML = ""
+    dates.forEach(function(date){
+        date_formation = date.date_formation.value;
+        date_lien = date.inscription_lien.value.url;
+
+        datesHTML += '<li><i class="fa fa-calendar" aria-hidden="true"></i> ' +
+        date_formation+' '
+        +'<a href="'+date_lien+'">(inscription)</a>'
+        +'</li>';
+    });
+
+    return datesHTML;
 }
 
 //Pour afficher une page de contenu venant de prismic
@@ -241,19 +263,6 @@ function displayFormationDetails(){
             if (err) { Configuration.onPrismicError(err); return; }
 
             var doc = docs.results[0];
-
-            dates = doc.data['offre-formation.prochaines_dates'].value
-            datesHTML = ""
-            dates.forEach(function(date){
-                date_formation = date.date_formation.value;
-                date_lien = date.inscription_lien.value.url;
-
-                datesHTML += '<li><i class="fa fa-calendar" aria-hidden="true"></i> ' +
-                date_formation+' '
-                +'<a href="'+date_lien+'">(inscription)</a>'
-                +'</li>';
-            });
-
             // If there is no documents for this id
             if(!doc) {
                 document.location = '404.html';
@@ -265,7 +274,7 @@ function displayFormationDetails(){
             $("#formation_title").text(titre);
             $(".formation_duree").text(doc.getStructuredText('offre-formation.duree').asText());
             $(".formation_tarif").text(doc.getStructuredText('offre-formation.tarif').asText());
-            $(".formation_dates").html(datesHTML);
+            $(".formation_dates").html(extractAllDatesAsHTML(doc));
             $("#formation_detail").html(doc.getStructuredText('offre-formation.contenu').asHtml());
 
         });

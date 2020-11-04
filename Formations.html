@@ -59,39 +59,39 @@
 					<!-- NOTE : La sidebat de droite est clonnée pour qu'en smartphone elle soit visible en premier -->
 					<div class="col-sm-4 col-lg-offset-1 col-lg-3 visible-xs-block">
 						<h2>Prochaines formations :</h2>
-						<p> En cours...</p>
+						<p class="prochaine_formations"></p>
 					</div>
 					<div class="col-sm-8"> 
 						<h2>Formations à distance</h2>
 						<div id="contrib_formations" ></div>
 
-						<script id="contribution-item-template" type="text/x-handlebars-template">
-	                    		{{#each this}}
+						<script id="formation-item-template" type="text/x-handlebars-template">
+                    		{{#each this}}
 
-	                    		<article class="panel panel-default">
-									<div class="panel-heading">
-										<h2><a href="{{url}}">{{{titre}}}</a></h2>
+                    		<article class="panel panel-default">
+								<div class="panel-heading">
+									<h2><a href="{{url}}">{{{titre}}}</a></h2>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-sm-6"><img src="{{imageUrl}}" width="359" height="215" alt=""/></div>
+										<div class="col-sm-6">{{contenu}}</div>
 									</div>
-									<div class="panel-body">
-										<div class="row">
-											<div class="col-sm-6"><img src="{{imageUrl}}" width="359" height="215" alt=""/></div>
-											<div class="col-sm-6">{{contenu}}</div>
+								</div>
+								<div class="panel-footer">
+									<div class="row">
+										<div class="col-sm-6">
+											<p class="p-theme">Durée : {{{duree}}}</p>
+										</div>
+										<div class="col-sm-6 text-right">
+											<p><a href="{{url}}" class="btn-read">
+												Voir le détail &nbsp;&nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i></a></p>
 										</div>
 									</div>
-									<div class="panel-footer">
-										<div class="row">
-											<div class="col-sm-6">
-												<p class="p-theme">Durée : {{{duree}}}</p>
-											</div>
-											<div class="col-sm-6 text-right">
-												<p><a href="{{url}}" class="btn-read">
-													Voir le détail &nbsp;&nbsp;<i class="fa fa-file-text-o" aria-hidden="true"></i></a></p>
-											</div>
-										</div>
-									</div>
-								</article>
-		                     	{{/each}}  
-		                   </script>
+								</div>
+							</article>
+	                     	{{/each}}  
+	                    </script>
 						
 					</div>
 					
@@ -99,8 +99,17 @@
 					
 					<div class="col-sm-4 col-lg-offset-1 col-lg-3 hidden-xs">
 						<h2>Prochaines formations :</h2>
-						<p> En cours...</p>
+						<p class="prochaine_formations"></p>
 					</div>
+
+					<script id="formation-date-template" type="text/x-handlebars-template">
+                		{{#each this}}
+							<h3 class="theme"><a href="{{url}}">{{{titre}}}</a></h3></p>
+							<ul>
+								{{{dates}}}
+							</ul>
+                     	{{/each}}  
+                   </script>
 				</div>
 			</div>
 		</section>
