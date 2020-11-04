@@ -263,9 +263,9 @@ function displayFormationDetails(){
 
             document.title = "AgileTribu - " + titre;
             $("#formation_title").text(titre);
-            $("#formation_duree").text(doc.getStructuredText('offre-formation.duree').asText());
-            $("#formation_tarif").text(doc.getStructuredText('offre-formation.tarif').asText());
-            $("#formation_dates").html(datesHTML);
+            $(".formation_duree").text(doc.getStructuredText('offre-formation.duree').asText());
+            $(".formation_tarif").text(doc.getStructuredText('offre-formation.tarif').asText());
+            $(".formation_dates").html(datesHTML);
             $("#formation_detail").html(doc.getStructuredText('offre-formation.contenu').asHtml());
 
         });
