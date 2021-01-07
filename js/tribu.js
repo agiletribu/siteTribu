@@ -243,7 +243,7 @@ function extractAllDatesAsHTML(doc){
 
         datesHTML += '<li><i class="fa fa-calendar" aria-hidden="true"></i> ' +
         date_formation+' '
-        +'<a href="'+date_lien+'">(inscription)</a>'
+        +'<a href="'+date_lien+'"> => Je m\'inscris</a>'
         +'</li>';
     });
 
